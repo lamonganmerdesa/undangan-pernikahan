@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!-- Meta Tags untuk Link Preview -->
+  <meta property="og:title" content="Undangan Pernikahan - Supriyo Widodo & Ika Puji Kurnia">
+  <meta property="og:description" content="Dengan penuh rasa syukur, kami mengundang Anda untuk menyaksikan pernikahan putra-putri kami. Semoga Allah SWT meridhoi pernikahan ini.">
+  <meta property="og:image" content="cover.jpg"> <!-- Ganti dengan URL gambar cover Anda -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cover Undangan Pernikahan Supriyo Widodo & Ika Puji Kurnia">
+  <meta property="og:url" content="https://undangan-kamu.com"> <!-- Ganti dengan URL website Anda -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Undangan Pernikahan">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Undangan Pernikahan - Supriyo Widodo & Ika Puji Kurnia">
+  <meta name="twitter:description" content="Dengan penuh rasa syukur, kami mengundang Anda untuk menyaksikan pernikahan putra-putri kami.">
+  <meta name="twitter:image" content="https://i.imgur.com/COVER_IMAGE.jpg"> <!-- Ganti dengan URL gambar cover Anda -->
+  
+  <!-- WhatsApp Specific -->
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:secure_url" content="https://i.imgur.com/COVER_IMAGE.jpg">
+  
+  <!-- Additional Meta -->
+  <meta name="description" content="Undangan pernikahan digital untuk Supriyo Widodo & Ika Puji Kurnia. Dengan penuh rasa syukur, kami mengundang Anda untuk menyaksikan pernikahan putra-putri kami.">
+  <meta name="keywords" content="undangan pernikahan, digital invitation, wedding, Supriyo Widodo, Ika Puji Kurnia">
+  <meta name="author" content="Supriyo & Ika">
+  <title>Supriyo Widodo & Ika Puji Kurnia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@700&family=EB+Garamond:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{height:100%;width:100%;overflow:hidden;background:#000428;position:relative;}
+
+    body::before{content:"";position:fixed;inset:0;z-index:1;background:radial-gradient(circle at 50% 20%, #1a0f3d 0%, #000428 70%);pointer-events:none;}
+    body::after{content:"";position:fixed;inset:0;z-index:1;background:radial-gradient(circle at 20% 80%, rgba(100,180,255,0.12) 0%, transparent 50%),radial-gradient(circle at 80% 20%, rgba(180,255,180,0.1) 0%, transparent 50%);pointer-events:none;}
+    canvas#particles{position:fixed;inset:0;z-index:2;pointer-events:none;}
+
+    /* Wrapper untuk mobile - video fullscreen */
+    .wrapper{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    /* Swiper dan slide full height */
+    .swiper,.swiper-slide{
+      width:100%;
+      height:100%;
+      background:#000;
+      position:relative;
+    }
+
+    /* Video memenuhi container */
+    .video-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* Video hidden untuk scene 6 */
+    .video-hidden {
+      display: none !important;
+    }
+
+    /* Untuk desktop - center dengan aspect ratio 9:16 */
+    @media (min-width: 769px) and (min-aspect-ratio: 9/16) {
+      .wrapper {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 56.25vh;
+        height: 100vh;
+        max-height: 177.78vw;
+        max-width: 90vw;
+        box-shadow: 0 0 100px rgba(0,0,0,0.9);
+      }
+      
+      video {
+        object-fit: cover;
+      }
+    }
+
+    /* Tulisan tiap scene */
+    .scene-text{
+      position: absolute;
+      z-index: 15;
+      text-align: center;
+      width: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Scheherazade New', serif;
+      color: transparent;
+      background: linear-gradient(45deg, #e8dcc2, #ffd700, #e8dcc2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(232,220,194,0.6);
+      opacity: 0;
+      pointer-events: none;
+      animation: fadeInOut 8s infinite;
+    }
+    
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; }
+      20%, 80% { opacity: 0.9; }
+    }
+    
+    .text1 {
+      bottom: 22%;
+      font-size: clamp(32px, 8vw, 68px);
+      letter-spacing: 4px;
+    }
+    
+    .text2 {
+      top: 22%;
+      font-size: clamp(28px, 7vw, 60px);
+    }
+    
+    .text3 {
+      top: 18%;
+      font-size: clamp(34px, 8vw, 70px);
+    }
+    
+    .text4 {
+      bottom: 25%;
+      font-size: clamp(30px, 7.5vw, 62px);
+    }
+
+    /* Scene 5 – foto + tombol */
+    .scene7-content{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 20;
+    }
+    
+    .final-photo{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 86%;
+      max-width: 420px;
+      border-radius: 24px;
+      border: 6px solid rgba(232,220,194,0.45);
+      box-shadow: 0 30px 80px #000;
+    }
+    
+    .final-overlay{
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .btn{
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      padding: 15px 44px;
+      margin: 5px;
+      border: 1.5px solid #e8dcc2;
+      color: #e8dcc2;
+      border-radius: 60px;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(12px);
+      text-decoration: none;
+      display: inline-block;
+      transition: .4s;
+      cursor: pointer;
+      text-align: center;
+      min-width: 200px;
+    }
+    
+    .btn:hover{
+      background: rgba(232,220,194,0.3);
+      box-shadow: 0 0 40px rgba(232,220,194,0.8);
+      transform: scale(1.05);
+    }
+
+    /* Scene 6 – Google Maps */
+    .scene6-content{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 20;
+    }
+    
+    .map-container{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background: #000;
+    }
+    
+    .map-container iframe{
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    
+    /* Tambahkan overlay info di peta */
+    .map-overlay{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.9);
+      color: #e8dcc2;
+      padding: 15px;
+      text-align: center;
+      z-index: 25;
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(232,220,194,0.3);
+    }
+    
+    .map-overlay h3{
+      font-family: 'Scheherazade New', serif;
+      margin-bottom: 5px;
+      font-size: 1.3rem;
+    }
+    
+    .map-overlay p{
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* Kontrol musik */
+    #soundBtn{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      z-index: 9999;
+      background: rgba(0,0,0,0.6);
+      border: 2px solid #e8dcc2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(232,220,194,0.4);
+      transition: all .6s;
+    }
+    
+    #soundBtn:hover{
+      transform: scale(1.1);
+    }
+    
+    #soundBtn.playing{
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Swiper pagination custom */
+    .swiper-pagination{
+      position: absolute;
+      right: 20px !important;
+      left: auto !important;
+      width: auto !important;
+      transform: translateY(-50%);
+    }
+    
+    .swiper-pagination-bullet{
+      background: #e8dcc2;
+      opacity: 0.5;
+      width: 10px;
+      height: 10px;
+      margin: 8px 0 !important;
+    }
+    
+    .swiper-pagination-bullet-active{
+      opacity: 1;
+      background: #ffd700;
+    }
+
+    /* Loading screen */
+    .loading{
+      position: fixed;
+      inset: 0;
+      background: #000428;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .loading-text{
+      color: #e8dcc2;
+      font-family: 'EB Garamond', serif;
+      font-size: 24px;
+      margin-top: 30px;
+      letter-spacing: 2px;
+    }
+    
+    .spinner{
+      border: 5px solid rgba(232,220,194,0.1);
+      border-top: 5px solid #e8dcc2;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin{
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Tombol tambahan di slide 5 */
+    .additional-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 300px;
+      margin-top: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px){
+      .wrapper{
+        width: 100vw;
+        height: 100vh;
+        max-width: 100%;
+      }
+      
+      .scene-text{
+        width: 95%;
+      }
+      
+      .text1{
+        bottom: 20%;
+        font-size: clamp(28px, 7vw, 40px);
+      }
+      
+      .text2{
+        top: 18%;
+        font-size: clamp(24px, 6vw, 36px);
+      }
+      
+      .text3{
+        top: 15%;
+        font-size: clamp(28px, 7vw, 44px);
+      }
+      
+      .text4{
+        bottom: 22%;
+        font-size: clamp(26px, 6.5vw, 38px);
+      }
+      
+      .final-overlay{
+        bottom: 40px;
+      }
+      
+      .btn{
+        font-size: 16px;
+        padding: 12px 30px;
+        min-width: 180px;
+      }
+      
+      .additional-buttons {
+        max-width: 250px;
+      }
+    }
+    
+    @media (max-height: 700px) {
+      .final-overlay{
+        bottom: 30px;
+      }
+      
+      .btn{
+        padding: 10px 25px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="wrapper">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Scene 1 -->
+      <div class="swiper-slide">
+        <div class="video-container">
+          <video src="1.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+      <!-- Scene 2 -->
+      <div class="swiper-slide">
+        <div class="video-container">
+          <video src="2.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+      <!-- Scene 3 -->
+      <div class="swiper-slide">
+        <div class="video-container">
+          <video src="3.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+      <!-- Scene 4 -->
+      <div class="swiper-slide">
+        <div class="video-container">
+          <video src="4.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+
+      <!-- Scene 5 – Tombol Ucapan & Map -->
+      <div class="swiper-slide">
+        <div class="video-container">
+          <video src="5.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+	  
+	  <div class="swiper-slide">
+        <div class="video-container">
+          <video src="6.mp4" autoplay muted loop playsinline></video>
+        </div>
+		<div class="scene6-content">
+          <div class="final-overlay">                        
+            <div class="additional-buttons">
+			<a href="https://wa.me/6285745137795?text=Assalamu'alaikum%2C%20selamat%20menikah%20untuk%20Supriyo%20Widodo%20%26%20Ika%20Puji%20Kurnia.%20Semoga%20menjadi%20keluarga%20yang%20sakinah%2C%20mawaddah%2C%20warahmah.%20%F0%9F%99%8F" 
+               target="_blank" class="btn">
+               💌 Kirim Ucapan via WhatsApp
+            </a>
+			<a href="https://maps.app.goo.gl/yLHvN8VMCt3U9Lm46" 
+               target="_blank" class="btn">
+               🗺️ Lihat Lokasi Acara
+            </a>
+              
+              <button onclick="shareUndangan()" class="btn">
+                📱 Bagikan Undangan
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scene 6 – Maps -->
+      <div class="swiper-slide">        
+        <div class="scene6-content">
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.648905291297!2d112.06875077591748!3d-7.826933977744155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7859b589f8ea59%3A0x17e3d3c784fd183c!2sPondok%20Pesantren%20MIFTAHUL%20MUBTADI%27IN!5e0!3m2!1sid!2sid!4v1714610657903!5m2!1sid!2sid" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-overlay">
+              <h3>Pondok Pesantren Miftahul Mubtadi'in</h3>
+              <p>Lokasi resepsi pernikahan Supriyo Widodo & Ika Puji Kurnia</p>
+              <p style="margin-top: 8px; font-size: 0.8rem;">
+                <a href="https://maps.google.com/?q=Pondok Pesantren MIFTAHUL MUBTADI'IN" 
+                   target="_blank" 
+                   style="color: #ffd700; text-decoration: none;">
+                  📍 Buka di Google Maps
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<!-- Ikon speaker -->
+<div id="soundBtn" onclick="playMusic()">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e8dcc2" stroke-width="2.5">
+    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    <path d="M15.93 7.07a6 6 0 0 1 0 8.48"/>
+  </svg>
+</div>
+
+<audio id="bgmusic" loop preload="auto">
+  <source src="musik.mp3" type="audio/mp3">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Loading screen
+  const loadingScreen = document.createElement('div');
+  loadingScreen.className = 'loading';
+  loadingScreen.id = 'loading';
+  loadingScreen.innerHTML = `
+    <div class="spinner"></div>
+    <div class="loading-text">Memuat Undangan...</div>
+  `;
+  document.body.appendChild(loadingScreen);
+
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.getElementById('loading').style.display = 'none';
+      
+      // Inisialisasi semua video
+      const videos = document.querySelectorAll('video');
+      videos.forEach(video => {
+        video.play().catch(e => console.log("Video autoplay diblokir:", e));
+      });
+    }, 1500);
+  });
+
+  const audio = document.getElementById('bgmusic');
+  const soundBtn = document.getElementById('soundBtn');
+  
+  function playMusic(){
+    audio.volume = 0.7;
+    audio.play().then(() => {
+      soundBtn.classList.add('playing');
+    }).catch(e => {
+      console.log("Autoplay diblokir:", e);
+      soundBtn.style.display = 'flex';
+    });
+  }
+  
+  audio.play().catch(() => {
+    soundBtn.classList.remove('playing');
+  });
+
+  // Deklarasi swiper di level global
+  let swiper;
+
+  // Inisialisasi Swiper setelah DOM siap
+  document.addEventListener('DOMContentLoaded', function() {
+    swiper = new Swiper('.swiper',{
+      direction:'vertical',
+      loop:false,
+      speed:800,
+      mousewheel:true,
+      pagination:{
+        el:'.swiper-pagination',
+        clickable:true,
+        type:'bullets'
+      },
+      allowTouchMove:true,
+      on: {
+        init: function() {
+          updateSceneContent();
+          playAllVideos();
+        },
+        slideChangeTransitionStart: function() {
+          const prevSlide = this.slides[this.previousIndex];
+          const prevVideo = prevSlide.querySelector('video');
+          if(prevVideo) {
+            prevVideo.pause();
+          }
+        },
+        slideChangeTransitionEnd: function() {
+          const currentSlide = this.slides[this.activeIndex];
+          const currentVideo = currentSlide.querySelector('video');
+          if(currentVideo) {
+            currentVideo.currentTime = 0;
+            currentVideo.play().catch(e => console.log("Video play error:", e));
+          }
+          
+          updateSceneContent();
+          
+          if(this.activeIndex === 5) {
+            setTimeout(refreshMaps, 300);
+          }
+        }
+      }
+    });
+  });
+
+  // Fungsi untuk memainkan semua video
+  function playAllVideos() {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+      video.play().catch(e => console.log("Video autoplay diblokir:", e));
+    });
+  }
+
+  // Fungsi untuk refresh Google Maps
+  function refreshMaps() {
+    const mapIframe = document.querySelector('.scene6-content iframe');
+    if(mapIframe) {
+      const src = mapIframe.src;
+      mapIframe.src = src;
+      console.log("Maps refreshed");
+    }
+  }
+
+  // Fungsi untuk pindah ke slide maps
+  function showMapSlide() {
+    if (swiper) {
+      swiper.slideTo(5, 800); // Slide ke index 5 (scene 6) dengan animasi 800ms
+      setTimeout(refreshMaps, 500);
+    } else {
+      console.error("Swiper not initialized");
+      // Fallback: buka maps di tab baru
+      window.open('https://www.google.com/maps?q=Pondok+Pesantren+MIFTAHUL+MUBTADI%27IN', '_blank');
+    }
+  }
+
+  // Fungsi untuk berbagi undangan
+  function shareUndangan() {
+    const shareData = {
+      title: 'Undangan Pernikahan - Supriyo Widodo & Ika Puji Kurnia',
+      text: 'Saya mengundang Anda untuk menyaksikan pernikahan Supriyo Widodo & Ika Puji Kurnia',
+      url: window.location.href
+    };
+    
+    if (navigator.share) {
+      navigator.share(shareData)
+        .then(() => console.log('Undangan berhasil dibagikan'))
+        .catch(error => console.log('Error sharing:', error));
+    } else {
+      // Fallback untuk browser yang tidak support Web Share API
+      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareData.text + ' ' + shareData.url)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  }
+
+  // Fungsi untuk menampilkan konten berdasarkan scene
+  function updateSceneContent() {
+    if (!swiper) return;
+    
+    const activeIndex = swiper.activeIndex;
+    
+    const scene5Content = document.querySelector('.scene5-content');
+    const scene6Content = document.querySelector('.scene6-content');
+    
+    if(activeIndex === 4) {
+      if(scene5Content) scene5Content.style.display = 'block';
+      if(scene6Content) scene6Content.style.display = 'none';
+    } else if(activeIndex === 5) {
+      if(scene5Content) scene5Content.style.display = 'none';
+      if(scene6Content) scene6Content.style.display = 'block';
+    } else {
+      if(scene5Content) scene5Content.style.display = 'none';
+      if(scene6Content) scene6Content.style.display = 'none';
+    }
+  }
+
+  // Partikel emas kristal
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  
+  resizeCanvas();
+  
+  const particles = Array.from({length:60},()=>({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    size:Math.random()*2.5+0.8,
+    speedY:Math.random()*0.6+0.2,
+    opacity:Math.random()*0.5+0.3,
+    swing: Math.random() * Math.PI * 2
+  }));
+  
+  function drawParticles(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+      ctx.fillStyle=`rgba(232,220,194,${p.opacity})`;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fill();
+      
+      p.y += p.speedY;
+      p.swing += 0.05;
+      p.x += Math.sin(p.swing) * 0.4;
+      
+      if(p.y > canvas.height + 10) {
+        p.y = -10;
+        p.x = Math.random() * canvas.width;
+      }
+      if(p.x < -10) p.x = canvas.width + 10;
+      if(p.x > canvas.width + 10) p.x = -10;
+    });
+    
+    requestAnimationFrame(drawParticles);
+  }
+  
+  drawParticles();
+  
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+  });
+
+  // Kontrol video saat tidak aktif
+  document.addEventListener('visibilitychange', function() {
+    if (!swiper) return;
+    
+    const currentSlide = swiper.slides[swiper.activeIndex];
+    const currentVideo = currentSlide.querySelector('video');
+    
+    if (document.hidden) {
+      if(currentVideo) {
+        currentVideo.pause();
+      }
+    } else {
+      if(currentVideo) {
+        currentVideo.play().catch(e => console.log("Video resume error:", e));
+      }
+    }
+  });
+
+  // Pastikan maps di-load
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(refreshMaps, 1000);
+  });
+</script>
+</body>
+</html>
