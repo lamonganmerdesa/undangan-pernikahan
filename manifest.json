@@ -1,0 +1,23 @@
+{
+  "name": "Undangan Pernikahan",
+  "short_name": "Undangan",
+  "description": "Undangan Pernikahan Supriyo Widodo & Ika Puji Kurnia",
+  "start_url": "/undangan-pernikahan/?source=pwa",
+  "display": "standalone",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "portrait",
+  "background_color": "#f8f0e7",
+  "theme_color": "#d4a76a",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
