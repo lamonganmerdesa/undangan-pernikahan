@@ -1,6 +1,6 @@
 // service-worker.js - Versi SIMPLIFIED
 const CACHE_NAME = 'undangan-v4';
-const OFFLINE_URL = '/undangan-pernikahan/offline.html';
+//const OFFLINE_URL = '/undangan-pernikahan/offline.html';
 
 // Assets yang wajib di-cache
 const PRECACHE_ASSETS = [
@@ -110,4 +110,5 @@ self.addEventListener('message', event => {
     self.skipWaiting();
   }
 });
+
 
