@@ -4,11 +4,11 @@ const OFFLINE_URL = '/undangan-pernikahan/offline.html';
 
 // Assets yang wajib di-cache
 const PRECACHE_ASSETS = [
-  '/undangan-pernikahan/',
-  '/undangan-pernikahan/index.html',
-  '/undangan-pernikahan/manifest.json',
-  '/undangan-pernikahan/cover_baru.jpg',
-  '/undangan-pernikahan/musik.MP3'
+  './',
+  './index.html',
+  './manifest.json',
+  './cover_baru.jpg',
+  './musik.MP3'
 ];
 
 // Install Service Worker
@@ -110,3 +110,4 @@ self.addEventListener('message', event => {
     self.skipWaiting();
   }
 });
+
