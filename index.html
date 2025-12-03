@@ -5,96 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   
   <!-- PWA META TAGS LENGKAP -->
-<meta name="application-name" content="Undangan Pernikahan">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Undangan Pernikahan">
-<meta name="format-detection" content="telephone=no">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="msapplication-TileColor" content="#d4a76a">
-<meta name="msapplication-tap-highlight" content="no">
-<meta name="theme-color" content="#d4a76a">
+  <meta name="application-name" content="Undangan Pernikahan">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Undangan Pernikahan">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#d4a76a">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="theme-color" content="#d4a76a">
 
-<!-- APPLE SPECIFIC ICONS -->
-<link rel="apple-touch-icon" href="icons/icon-152x152.png">
-<link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192x192.png">
-<link rel="apple-touch-icon" sizes="167x167" href="icons/icon-192x192.png">
+  <!-- APPLE SPECIFIC ICONS -->
+  <link rel="apple-touch-icon" href="icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="icons/icon-192x192.png">
 
-<!-- MANIFEST dengan atribut crossorigin -->
-<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+  <!-- MANIFEST dengan atribut crossorigin -->
+  <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
 
-<!-- FAVICON untuk browser biasa -->
-<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16x16.png">
-<link rel="shortcut icon" href="favicon.ico">
-
-<!-- PWA STYLES untuk Fullscreen -->
-<style>
-  /* FORCE FULLSCREEN - HIDE ADDRESS BAR */
-  html {
-    height: 100%;
-    overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background: #000;
-  }
-  
-  /* HIDE SCROLLBARS */
-  body::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* FORCE MOBILE FULL HEIGHT */
-  @media (max-width: 768px) {
-    html, body {
-      height: 100vh;
-      height: -webkit-fill-available;
-      height: fill-available;
-    }
-    
-    .wrapper {
-      height: 100vh;
-      height: -webkit-fill-available;
-      height: fill-available;
-    }
-  }
-  
-  /* SAFE AREAS untuk iPhone dengan notch */
-  @supports(padding: max(0px)) {
-    body {
-      padding-top: max(env(safe-area-inset-top), 0px);
-      padding-bottom: max(env(safe-area-inset-bottom), 0px);
-      padding-left: max(env(safe-area-inset-left), 0px);
-      padding-right: max(env(safe-area-inset-right), 0px);
-    }
-    
-    #soundBtn {
-      top: max(20px, env(safe-area-inset-top));
-    }
-  }
-  
-  /* PWA MODE INDICATOR */
-  .pwa-mode #soundBtn {
-    top: max(20px, env(safe-area-inset-top, 20px));
-  }
-  
-  .pwa-mode .swiper-pagination {
-    right: max(20px, env(safe-area-inset-right, 20px)) !important;
-  }
-</style>
-  
-  <!-- Icons -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <!-- FAVICON untuk browser biasa -->
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico">
   
   <!-- Meta Tags untuk Link Preview -->
   <meta property="og:title" content="Undangan Pernikahan - Supriyo Widodo & Ika Puji Kurnia">
@@ -128,21 +61,37 @@
   <title>Undangan Pernikahan - Supriyo Widodo & Ika Puji Kurnia</title>
   
   <style>
-    /* RESET & BASE */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; width: 100%; overflow: hidden; background: #000428; position: fixed; }
+    /* ========== RESET & BASE ========== */
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
     
-    /* iOS Safe Areas */
+    html, body { 
+      height: 100%; 
+      width: 100%; 
+      overflow: hidden; 
+      background: #000428; 
+      position: fixed; 
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* ========== iOS SAFE AREAS ========== */
     @supports(padding: max(0px)) {
       body {
-        padding-top: env(safe-area-inset-top);
-        padding-bottom: env(safe-area-inset-bottom);
-        padding-left: env(safe-area-inset-left);
-        padding-right: env(safe-area-inset-right);
+        padding-top: max(env(safe-area-inset-top), 0px);
+        padding-bottom: max(env(safe-area-inset-bottom), 0px);
+        padding-left: max(env(safe-area-inset-left), 0px);
+        padding-right: max(env(safe-area-inset-right), 0px);
+      }
+      
+      #soundBtn {
+        top: max(20px, env(safe-area-inset-top, 20px));
       }
     }
     
-    /* BACKGROUND EFFECTS */
+    /* ========== BACKGROUND EFFECTS ========== */
     body::before {
       content: "";
       position: fixed;
@@ -170,16 +119,19 @@
       pointer-events: none;
     }
     
-    /* WRAPPER & SWIPER */
+    /* ========== WRAPPER & SWIPER ========== */
     .wrapper {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
+      height: -webkit-fill-available;
+      height: fill-available;
       background: #000;
       z-index: 10;
       overflow: hidden;
+      -webkit-overflow-scrolling: touch;
     }
     
     .swiper, .swiper-slide {
@@ -189,7 +141,7 @@
       position: relative;
     }
     
-    /* VIDEO CONTAINERS */
+    /* ========== VIDEO CONTAINERS ========== */
     .video-container {
       width: 100%;
       height: 100%;
@@ -206,12 +158,9 @@
       position: absolute;
       top: 0;
       left: 0;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
-    
-    .video-container video.video-loaded {
       opacity: 1;
+      transition: opacity 0.3s ease;
+      z-index: 3;
     }
     
     .video-loading {
@@ -226,9 +175,16 @@
       border-radius: 50%;
       animation: spin 1s linear infinite;
       z-index: 5;
+      transition: opacity 0.3s;
     }
     
-    /* SCENE TEXT ANIMATIONS */
+    .video-loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+      animation: none;
+    }
+    
+    /* ========== SCENE TEXT ANIMATIONS ========== */
     .scene-text {
       position: absolute;
       z-index: 15;
@@ -242,14 +198,14 @@
       -webkit-background-clip: text;
       background-clip: text;
       text-shadow: 0 0 30px rgba(232,220,194,0.6);
-      opacity: 0;
+      opacity: 0.9;
       pointer-events: none;
       animation: fadeInOut 8s infinite;
     }
     
     @keyframes fadeInOut {
-      0%, 100% { opacity: 0; }
-      20%, 80% { opacity: 0.9; }
+      0%, 100% { opacity: 0.9; }
+      20%, 80% { opacity: 1; }
     }
     
     @keyframes spin {
@@ -262,7 +218,7 @@
     .text3 { top: 18%; font-size: clamp(34px, 8vw, 70px); }
     .text4 { bottom: 25%; font-size: clamp(30px, 7.5vw, 62px); }
     
-    /* BUTTONS STYLES */
+    /* ========== BUTTONS STYLES ========== */
     .btn {
       font-family: 'EB Garamond', serif;
       font-size: 18px;
@@ -287,7 +243,7 @@
       transform: scale(1.05);
     }
     
-    /* FINAL SCENE (UCAPAN & MAPS) */
+    /* ========== FINAL SCENE (UCAPAN & MAPS) ========== */
     .final-overlay {
       position: absolute;
       bottom: 60px;
@@ -311,7 +267,7 @@
       margin-top: 10px;
     }
     
-    /* MAPS SCENE */
+    /* ========== MAPS SCENE ========== */
     .scene6-content {
       position: absolute;
       top: 0;
@@ -361,7 +317,7 @@
       opacity: 0.9;
     }
     
-    /* MUSIC CONTROL */
+    /* ========== MUSIC CONTROL ========== */
     #soundBtn {
       position: fixed;
       top: 20px;
@@ -384,7 +340,7 @@
     #soundBtn:hover { transform: scale(1.1); }
     #soundBtn.playing { opacity: 0; pointer-events: none; }
     
-    /* SWIPER PAGINATION */
+    /* ========== SWIPER PAGINATION ========== */
     .swiper-pagination {
       position: absolute;
       right: 20px !important;
@@ -406,7 +362,7 @@
       background: #ffd700;
     }
     
-    /* LOADING SCREEN */
+    /* ========== LOADING SCREEN IMPROVED ========== */
     .loading {
       position: fixed;
       inset: 0;
@@ -416,6 +372,13 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    
+    .loading.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
     }
     
     .loading-text {
@@ -424,6 +387,7 @@
       font-size: 24px;
       margin-top: 30px;
       letter-spacing: 2px;
+      text-align: center;
     }
     
     .spinner {
@@ -435,25 +399,33 @@
       animation: spin 1s linear infinite;
     }
     
-    /* DESKTOP STYLES */
+    /* ========== DESKTOP STYLES ========== */
     @media (min-width: 769px) and (min-aspect-ratio: 9/16) {
       .wrapper {
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 56.25vh;
+        width: 56.25vh; /* 9:16 aspect ratio */
         height: 100vh;
+        max-width: 100vw;
         max-height: 177.78vw;
-        max-width: 90vw;
-        box-shadow: 0 0 100px rgba(0,0,0,0.9);
         border-radius: 20px;
+        box-shadow: 0 0 50px rgba(0,0,0,0.8);
         overflow: hidden;
       }
     }
     
-    /* MOBILE RESPONSIVE */
+    /* ========== MOBILE RESPONSIVE ========== */
     @media (max-width: 768px) {
-      .wrapper { width: 100vw; height: 100vh; max-width: 100%; }
+      .wrapper { 
+        width: 100vw; 
+        height: 100vh; 
+        height: -webkit-fill-available;
+        max-width: 100%; 
+        border-radius: 0;
+      }
+      
       .scene-text { width: 95%; }
       .text1 { bottom: 20%; font-size: clamp(28px, 7vw, 40px); }
       .text2 { top: 18%; font-size: clamp(24px, 6vw, 36px); }
@@ -471,155 +443,41 @@
       .btn { padding: 10px 25px; font-size: 15px; }
     }
     
-    /* LOW DATA MODE */
-    @media (prefers-reduced-data: reduce) {
-      .video-container video { display: none; }
-      .video-container { background: #000; }
+    /* ========== TAP INSTRUCTION ========== */
+    #tapInstruction {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.8);
+      color: #e8dcc2;
+      padding: 20px 40px;
+      border-radius: 50px;
+      font-family: 'EB Garamond', serif;
+      font-size: 20px;
+      z-index: 99999;
+      backdrop-filter: blur(10px);
+      border: 2px solid #e8dcc2;
+      animation: pulse 2s infinite;
+      text-align: center;
     }
-    /* ========== IMPROVED LOADING SCREEN ========== */
-.loading {
-  position: fixed;
-  inset: 0;
-  background: #000428;
-  z-index: 99999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.5s ease;
-}
-
-.loading.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.spinner {
-  border: 5px solid rgba(232,220,194,0.1);
-  border-top: 5px solid #e8dcc2;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-}
-
-.loading-text {
-  color: #e8dcc2;
-  font-family: 'EB Garamond', serif;
-  font-size: 24px;
-  margin-top: 30px;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-/* ========== VIDEO LOADING IMPROVEMENT ========== */
-.video-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  background: #000;
-}
-
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-.video-container video.video-loaded {
-  opacity: 1 !important;
-}
-
-.video-loading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  border: 3px solid rgba(232, 220, 194, 0.3);
-  border-top: 3px solid #e8dcc2;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  z-index: 5;
-  transition: opacity 0.3s;
-}
-
-.video-loading.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* ========== SCENE TEXT VISIBILITY ========== */
-.scene-text {
-  position: absolute;
-  z-index: 15;
-  text-align: center;
-  width: 90%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Scheherazade New', serif;
-  color: transparent;
-  background: linear-gradient(45deg, #e8dcc2, #ffd700, #e8dcc2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(232,220,194,0.6);
-  opacity: 0;
-  pointer-events: none;
-  animation: fadeInOut 8s infinite;
-}
-
-/* Pastikan teks muncul di slide pertama */
-.swiper-slide-active .scene-text {
-  animation: fadeInOut 8s infinite;
-}
-
-/* ========== ANIMATIONS ========== */
-@keyframes spin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes fadeInOut {
-  0%, 100% { opacity: 0; }
-  20%, 80% { opacity: 0.9; }
-}
-
-/* ========== INITIAL LOAD FIX ========== */
-/* Pastikan konten pertama visible */
-.swiper-slide:first-child .video-container video {
-  opacity: 1 !important;
-}
-
-.swiper-slide:first-child .scene-text {
-  opacity: 0.9;
-  animation: fadeInOut 8s infinite;
-}
-
-/* ========== QUICK FIX FOR IMMEDIATE DISPLAY ========== */
-.force-visible {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
+    
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.9; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+    
+    /* ========== HIDE SCROLLBARS ========== */
+    body::-webkit-scrollbar {
+      display: none;
+    }
   </style>
 </head>
 <body>
 
 <!-- Particles Canvas -->
 <canvas id="particles"></canvas>
-
-<!-- Loading Screen -->
-<div class="loading" id="loading">
-  <div class="spinner"></div>
-  <div class="loading-text">Memuat Undangan...</div>
-</div>
 
 <!-- Main Wrapper -->
 <div class="wrapper">
@@ -629,9 +487,9 @@
       <!-- Scene 1 -->
       <div class="swiper-slide">
         <div class="video-container">
-          <div class="video-loading"></div>
+          <div class="video-loading" id="videoLoading1"></div>
           <video 
-            data-src="videos/1-optimized.mp4" 
+            src="videos/1-optimized.mp4"  
             poster="posters/poster1.jpg"
             preload="auto"
             muted
@@ -639,69 +497,68 @@
             playsinline
             webkit-playsinline
             width="100%"
-            height="100%">
-            autoplay 
-            class="force-visible">
-          </video>
+            height="100%"
+            autoplay>
+          </video>          
         </div>
       </div>
       
       <!-- Scene 2 -->
       <div class="swiper-slide">
         <div class="video-container">
-          <div class="video-loading"></div>
+          <div class="video-loading" id="videoLoading2"></div>
           <video 
-            data-src="videos/2-optimized.mp4" 
+            src="videos/2-optimized.mp4"  
             poster="posters/poster2.jpg"
-            preload="none"
+            preload="auto"  
             muted
             loop
             playsinline
             webkit-playsinline>
-          </video>
+          </video>          
         </div>
       </div>
       
       <!-- Scene 3 -->
       <div class="swiper-slide">
         <div class="video-container">
-          <div class="video-loading"></div>
+          <div class="video-loading" id="videoLoading3"></div>
           <video 
-            data-src="videos/3-optimized.mp4" 
+            src="videos/3-optimized.mp4"  
             poster="posters/poster3.jpg"
-            preload="none"
+            preload="auto"  
             muted
             loop
             playsinline
             webkit-playsinline>
-          </video>
+          </video>          
         </div>
       </div>
       
       <!-- Scene 4 -->
       <div class="swiper-slide">
         <div class="video-container">
-          <div class="video-loading"></div>
+          <div class="video-loading" id="videoLoading4"></div>
           <video 
-            data-src="videos/4-optimized.mp4" 
+            src="videos/4-optimized.mp4"  
             poster="posters/poster4.jpg"
-            preload="none"
+            preload="auto"  
             muted
             loop
             playsinline
             webkit-playsinline>
-          </video>
+          </video>          
         </div>
       </div>
       
       <!-- Scene 5 -->
       <div class="swiper-slide">
         <div class="video-container">
-          <div class="video-loading"></div>
+          <div class="video-loading" id="videoLoading5"></div>
           <video 
-            data-src="videos/5-optimized.mp4" 
+            src="videos/5-optimized.mp4"  
             poster="posters/poster5.jpg"
-            preload="none"
+            preload="auto"  
             muted
             loop
             playsinline
@@ -713,11 +570,11 @@
       <!-- Scene 6 - Ucapan & Tombol -->
       <div class="swiper-slide">
         <div class="video-container">
-          <div class="video-loading"></div>
+          <div class="video-loading" id="videoLoading6"></div>
           <video 
-            data-src="videos/6-optimized.mp4" 
+            src="videos/6-optimized.mp4"  
             poster="posters/poster6.jpg"
-            preload="none"
+            preload="auto"  
             muted
             loop
             playsinline
@@ -793,86 +650,87 @@
 <!-- External Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Main JavaScript -->
+<!-- PERBAIKAN SCRIPT UTAMA -->
 <script>
   // ========== GLOBAL VARIABLES ==========
   let swiper;
   const audio = document.getElementById('bgmusic');
   const soundBtn = document.getElementById('soundBtn');
+  let isInitialized = false;
   
-  // ========== LOADING MANAGER ==========
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      document.getElementById('loading').style.display = 'none';
-      initApplication();
-    }, 1500);
-  });
-  
-  function initApplication() {
-    initVideoManager();
-    initSwiper();
-    initParticles();
-    initMusic();
-    initServiceWorker();
+  // ========== LOADING MANAGER - SIMPLIFIED ==========
+  function hideLoadingScreen() {
+    const loadingScreen = document.getElementById('loading');
+    if (loadingScreen) {
+      loadingScreen.classList.add('hidden');
+      console.log('✅ Loading screen hidden');
+      
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 500);
+    }
   }
   
-  // ========== VIDEO MANAGER ==========
-  function initVideoManager() {
-    const videos = document.querySelectorAll('video[data-src]');
-    const videoObserver = new IntersectionObserver(handleVideoIntersection, {
-      threshold: 0.1,
-      rootMargin: '50px'
-    });
+  // ========== VIDEO HANDLER - FIXED ==========
+  function handleVideos() {
+    console.log('🎬 Handling videos...');
     
-    videos.forEach(video => {
-      videoObserver.observe(video);
-      video.addEventListener('loadeddata', () => {
-        video.classList.add('video-loaded');
-        const loading = video.parentElement.querySelector('.video-loading');
-        if (loading) loading.style.display = 'none';
-      });
-    });
-  }
-  
-  function handleVideoIntersection(entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const video = entry.target;
-        loadVideo(video);
+    const videos = document.querySelectorAll('video');
+    console.log(`Found ${videos.length} videos`);
+    
+    videos.forEach((video, index) => {
+      const videoId = index + 1;
+      const loadingSpinner = document.getElementById(`videoLoading${videoId}`);
+      
+      // Check if video is already loaded
+      if (video.readyState >= 2) { // HAVE_CURRENT_DATA or better
+        console.log(`Video ${videoId} already loaded`);
+        if (loadingSpinner) {
+          loadingSpinner.classList.add('hidden');
+        }
+      } else {
+        // Wait for video to load
+        video.addEventListener('loadeddata', () => {
+          console.log(`✅ Video ${videoId} loaded`);
+          if (loadingSpinner) {
+            loadingSpinner.classList.add('hidden');
+          }
+          
+          // Auto-play first video
+          if (index === 0) {
+            setTimeout(() => {
+              video.play().catch(e => {
+                console.log(`First video autoplay blocked: ${e.message}`);
+              });
+            }, 300);
+          }
+        }, { once: true });
+        
+        // Handle video errors
+        video.addEventListener('error', (e) => {
+          console.error(`❌ Video ${videoId} error:`, video.error);
+          if (loadingSpinner) {
+            loadingSpinner.classList.add('hidden');
+          }
+        });
       }
     });
+    
+    // Play first video immediately
+    const firstVideo = videos[0];
+    if (firstVideo) {
+      setTimeout(() => {
+        firstVideo.play().catch(e => {
+          console.log('First video autoplay blocked, waiting for interaction');
+        });
+      }, 500);
+    }
   }
   
-  function loadVideo(video) {
-    if (video.dataset.loaded) return;
-    
-    const src = video.getAttribute('data-src');
-    if (!src) return;
-    
-    video.dataset.loaded = true;
-    video.src = src;
-    video.load();
-    
-    // Coba play setelah load
-    video.addEventListener('loadeddata', () => {
-      if (isElementVisible(video)) {
-        video.play().catch(e => console.log('Video play prevented:', e));
-      }
-    }, { once: true });
-  }
-  
-  function isElementVisible(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-  
-  // ========== SWIPER INITIALIZATION ==========
+  // ========== SWIPER INITIALIZATION - FIXED ==========
   function initSwiper() {
+    console.log('🔄 Initializing Swiper...');
+    
     swiper = new Swiper('.swiper', {
       direction: 'vertical',
       loop: false,
@@ -886,38 +744,48 @@
       allowTouchMove: true,
       on: {
         init: function() {
-          // Load video pertama
-          const firstSlide = this.slides[0];
-          const firstVideo = firstSlide.querySelector('video');
-          if (firstVideo) loadVideo(firstVideo);
+          console.log('✅ Swiper initialized');
+          // Hide loading spinners for all loaded videos
+          document.querySelectorAll('video').forEach((video, index) => {
+            if (video.readyState >= 2) {
+              const spinner = document.getElementById(`videoLoading${index + 1}`);
+              if (spinner) spinner.classList.add('hidden');
+            }
+          });
         },
         slideChangeTransitionStart: function() {
           // Pause previous video
           const prevSlide = this.slides[this.previousIndex];
           const prevVideo = prevSlide.querySelector('video');
-          if (prevVideo) prevVideo.pause();
+          if (prevVideo && !prevVideo.paused) {
+            prevVideo.pause();
+          }
         },
         slideChangeTransitionEnd: function() {
-          // Play current video
           const currentSlide = this.slides[this.activeIndex];
           const currentVideo = currentSlide.querySelector('video');
+          
+          // Ensure video is visible and try to play
           if (currentVideo) {
+            // Make sure video opacity is 1
+            currentVideo.style.opacity = '1';
+            
+            // If video is loaded, play it
             if (currentVideo.readyState >= 2) {
-              currentVideo.play().catch(e => console.log('Video play error:', e));
+              currentVideo.play().catch(e => {
+                console.log(`Video ${this.activeIndex + 1} play error:`, e.message);
+              });
+            } else {
+              // If video not loaded yet, wait for it
+              currentVideo.addEventListener('loadeddata', () => {
+                currentVideo.play().catch(e => {
+                  console.log(`Video ${this.activeIndex + 1} play error after load:`, e.message);
+                });
+              }, { once: true });
             }
           }
           
-          // Preload next video
-          const nextIndex = this.activeIndex + 1;
-          if (nextIndex < this.slides.length) {
-            const nextSlide = this.slides[nextIndex];
-            const nextVideo = nextSlide.querySelector('video');
-            if (nextVideo && !nextVideo.dataset.loaded) {
-              preloadVideo(nextVideo);
-            }
-          }
-          
-          // Refresh maps jika di scene maps
+          // Refresh maps if needed
           if (this.activeIndex === 6) {
             setTimeout(refreshMaps, 300);
           }
@@ -926,32 +794,31 @@
     });
   }
   
-  function preloadVideo(video) {
-    const preloadVideo = document.createElement('video');
-    preloadVideo.src = video.getAttribute('data-src');
-    preloadVideo.preload = 'metadata';
-    preloadVideo.style.display = 'none';
-    document.body.appendChild(preloadVideo);
-    
-    setTimeout(() => {
-      if (preloadVideo.parentNode) {
-        document.body.removeChild(preloadVideo);
-      }
-    }, 3000);
-  }
-  
   // ========== MUSIC CONTROL ==========
   function initMusic() {
+    console.log('🎵 Initializing music...');
+    
     audio.volume = 0.7;
     
-    // Try autoplay with user gesture
-    document.addEventListener('click', function initAudio() {
+    // Try to play music automatically
+    setTimeout(() => {
       audio.play().then(() => {
+        console.log('✅ Music playing');
         soundBtn.classList.add('playing');
       }).catch(e => {
-        console.log("Audio autoplay prevented");
+        console.log('⚠️ Music autoplay blocked');
+        soundBtn.classList.remove('playing');
       });
-      document.removeEventListener('click', initAudio);
+    }, 1000);
+    
+    // Click anywhere to start music
+    document.addEventListener('click', function initAudioOnClick() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          soundBtn.classList.add('playing');
+        }).catch(e => console.log('Music play error:', e));
+      }
+      document.removeEventListener('click', initAudioOnClick);
     }, { once: true });
   }
   
@@ -969,7 +836,7 @@
   // ========== MAPS FUNCTIONS ==========
   function showMapSlide() {
     if (swiper) {
-      swiper.slideTo(6, 800); // Slide ke scene maps
+      swiper.slideTo(6, 800);
       setTimeout(refreshMaps, 500);
     }
   }
@@ -979,6 +846,7 @@
     if (mapIframe) {
       const src = mapIframe.src;
       mapIframe.src = src;
+      console.log('🗺️ Maps refreshed');
     }
   }
   
@@ -992,8 +860,8 @@
     
     if (navigator.share) {
       navigator.share(shareData)
-        .then(() => console.log('Undangan berhasil dibagikan'))
-        .catch(error => console.log('Error sharing:', error));
+        .then(() => console.log('✅ Undangan berhasil dibagikan'))
+        .catch(error => console.log('❌ Error sharing:', error));
     } else {
       const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareData.text + ' ' + shareData.url)}`;
       window.open(whatsappUrl, '_blank');
@@ -1003,6 +871,8 @@
   // ========== PARTICLES ANIMATION ==========
   function initParticles() {
     const canvas = document.getElementById('particles');
+    if (!canvas) return;
+    
     const ctx = canvas.getContext('2d');
     
     function resizeCanvas() {
@@ -1054,13 +924,76 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
         .then(registration => {
-          console.log('ServiceWorker registered:', registration.scope);
+          console.log('✅ ServiceWorker registered:', registration.scope);
         })
         .catch(error => {
-          console.log('ServiceWorker registration failed:', error);
+          console.log('❌ ServiceWorker registration failed:', error);
         });
     }
   }
+  
+  // ========== PWA FEATURES ==========
+  function initPWAFeatures() {
+    // Check if running in PWA mode
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
+                        window.navigator.standalone === true;
+    
+    if (isStandalone) {
+      document.body.classList.add('pwa-mode');
+      console.log('✅ Running in PWA mode');
+    } else {
+      console.log('🌐 Running in browser mode');
+    }
+    
+    // Hide address bar on mobile
+    setTimeout(() => {
+      window.scrollTo(0, 1);
+    }, 100);
+  }
+  
+  // ========== INITIALIZE EVERYTHING ==========
+  function initializeApp() {
+    if (isInitialized) return;
+    isInitialized = true;
+    
+    console.log('🚀 Initializing Wedding Invitation...');
+    
+    // 1. Handle videos (hide loading spinners, auto-play first)
+    handleVideos();
+    
+    // 2. Initialize Swiper
+    initSwiper();
+    
+    // 3. Initialize other components
+    initParticles();
+    initMusic();
+    initServiceWorker();
+    initPWAFeatures();
+    
+    console.log('✅ App initialized');
+  }
+  
+  // ========== WINDOW LOAD EVENT ==========
+  window.addEventListener('load', function() {
+    console.log('📦 Window loaded');
+    
+    // Hide loading screen after 1.5 seconds MAX
+    setTimeout(hideLoadingScreen, 1500);
+    
+    // Initialize app after a short delay
+    setTimeout(initializeApp, 500);
+  });
+  
+  // ========== FALLBACK TIMEOUT ==========
+  // Ensure loading screen disappears even if something fails
+  setTimeout(() => {
+    const loadingScreen = document.getElementById('loading');
+    if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+      console.log('⚠️ Force hiding loading screen (timeout)');
+      hideLoadingScreen();
+      initializeApp();
+    }
+  }, 3000);
   
   // ========== PAGE VISIBILITY ==========
   document.addEventListener('visibilitychange', function() {
@@ -1070,6 +1003,7 @@
     const currentVideo = currentSlide.querySelector('video');
     
     if (document.hidden) {
+      // Pause when tab not active
       if (currentVideo && !currentVideo.paused) {
         currentVideo.pause();
       }
@@ -1077,33 +1011,15 @@
         audio.pause();
       }
     } else {
+      // Resume when tab becomes active
       if (currentVideo && currentVideo.readyState >= 2) {
         currentVideo.play().catch(e => console.log('Video resume error:', e));
       }
     }
   });
   
-  // ========== ERROR HANDLING ==========
-  window.addEventListener('error', function(e) {
-    console.error('Error occurred:', e.error);
-    
-    // Fallback jika video gagal load
-    if (e.target.tagName === 'VIDEO') {
-      const video = e.target;
-      const container = video.parentElement;
-      const loading = container.querySelector('.video-loading');
-      
-      if (loading) loading.style.display = 'none';
-      
-      // Show fallback image
-      const poster = video.poster;
-      if (poster) {
-        container.style.background = `url(${poster}) center/cover no-repeat #000`;
-      }
-    }
-  });
-  
-  // ========== TOUCH PREVENTION ==========
+  // ========== PREVENT DEFAULT BEHAVIORS ==========
+  // Prevent zoom
   document.addEventListener('touchstart', function(e) {
     if (e.touches.length > 1) {
       e.preventDefault();
@@ -1117,178 +1033,10 @@
     }
   }, { passive: false });
   
-</script>
-  <script>
-  // ========== PWA & FULLSCREEN INITIALIZATION ==========
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Initializing Wedding Invitation PWA...');
-    
-    // 1. REGISTER SERVICE WORKER
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(registration => {
-          console.log('✅ Service Worker registered:', registration.scope);
-        })
-        .catch(error => {
-          console.log('❌ Service Worker registration failed:', error);
-        });
-    }
-    
-    // 2. CHECK IF RUNNING IN PWA MODE
-    function checkPWAMode() {
-      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
-                          window.navigator.standalone === true ||
-                          document.referrer.includes('android-app://');
-      
-      if (isStandalone) {
-        console.log('✅ Running in PWA/Standalone mode');
-        document.body.classList.add('pwa-mode');
-      } else {
-        console.log('🌐 Running in browser mode');
-        document.body.classList.add('browser-mode');
-        
-        // Show install prompt for PWA
-        showPWAInstallPrompt();
-      }
-      
-      return isStandalone;
-    }
-    
-    // 3. FORCE HIDE ADDRESS BAR (Mobile Browsers)
-    function hideAddressBar() {
-      // Hanya untuk mobile browsers, bukan PWA
-      if (!checkPWAMode()) {
-        // iOS Safari
-        if (/(iPhone|iPad|iPod)/.test(navigator.userAgent) && !window.MSStream) {
-          document.body.style.height = 'calc(100vh - 75px)';
-          setTimeout(() => window.scrollTo(0, 1), 100);
-        }
-        
-        // Android Chrome
-        if (/Android/.test(navigator.userAgent)) {
-          setTimeout(() => window.scrollTo(0, 1), 1000);
-        }
-        
-        // Scroll to hide address bar
-        window.addEventListener('load', () => {
-          setTimeout(() => window.scrollTo(0, 1), 0);
-        });
-        
-        // Prevent zoom
-        document.addEventListener('touchstart', (e) => {
-          if (e.touches.length > 1) e.preventDefault();
-        }, { passive: false });
-        
-        // Prevent pull-to-refresh
-        document.addEventListener('touchmove', (e) => {
-          if (e.scale !== 1) e.preventDefault();
-        }, { passive: false });
-      }
-    }
-    
-    // 4. PWA INSTALL PROMPT
-    let deferredPrompt;
-    
-    function showPWAInstallPrompt() {
-      window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        
-        // Show custom install button after 5 seconds
-        setTimeout(() => {
-          createInstallButton();
-        }, 5000);
-      });
-    }
-    
-    function createInstallButton() {
-      const installBtn = document.createElement('button');
-      installBtn.innerHTML = '📱 Install App';
-      installBtn.id = 'installPWA';
-      installBtn.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 99999;
-        background: #d4a76a;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 30px;
-        font-family: 'EB Garamond', serif;
-        font-size: 16px;
-        cursor: pointer;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        display: none;
-      `;
-      
-      document.body.appendChild(installBtn);
-      
-      // Show button
-      setTimeout(() => {
-        installBtn.style.display = 'block';
-      }, 100);
-      
-      // Auto hide after 15 seconds
-      setTimeout(() => {
-        installBtn.style.display = 'none';
-      }, 15000);
-      
-      installBtn.addEventListener('click', async () => {
-        installBtn.style.display = 'none';
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          const { outcome } = await deferredPrompt.userChoice;
-          console.log(`User ${outcome} the install prompt`);
-          deferredPrompt = null;
-        }
-      });
-    }
-    
-    // 5. ORIENTATION CHANGE HANDLER
-    window.addEventListener('orientationchange', () => {
-      setTimeout(() => {
-        document.body.style.minHeight = window.innerHeight + 'px';
-        window.scrollTo(0, 1);
-      }, 300);
-    });
-    
-    // 6. INITIALIZE EVERYTHING
-    checkPWAMode();
-    hideAddressBar();
-    
-    // 7. FORCE RESIZE on load
-    window.addEventListener('load', () => {
-      document.body.style.height = window.innerHeight + 'px';
-      setTimeout(() => {
-        window.scrollTo(0, 1);
-      }, 100);
-    });
-    
-    // 8. PAGE VISIBILITY
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) {
-        setTimeout(() => window.scrollTo(0, 1), 100);
-      }
-    });
-  });
+  // Prevent context menu
+  document.addEventListener('contextmenu', e => e.preventDefault());
   
-  // ========== ADDITIONAL FULLSCREEN TRICKS ==========
-  // Prevent context menu on long press
-  document.addEventListener('contextmenu', (e) => e.preventDefault());
-  
-  // Prevent text selection
-  document.addEventListener('selectstart', (e) => e.preventDefault());
-  
-  // Double tap to zoom prevention
-  let lastTouchEnd = 0;
-  document.addEventListener('touchend', (event) => {
-    const now = Date.now();
-    if (now - lastTouchEnd <= 300) {
-      event.preventDefault();
-    }
-    lastTouchEnd = now;
-  }, false);
+  console.log('🎯 Wedding Invitation Script Loaded');
 </script>
 </body>
 </html>
