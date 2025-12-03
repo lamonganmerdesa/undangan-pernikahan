@@ -3,91 +3,21 @@
   "short_name": "Undangan",
   "description": "Undangan Pernikahan Supriyo Widodo & Ika Puji Kurnia",
   "start_url": "./",
-"scope": "./"
+  "scope": "./",
   "display": "standalone",
-  "display_override": ["fullscreen", "standalone", "minimal-ui"],
   "orientation": "portrait-primary",
   "background_color": "#000428",
   "theme_color": "#d4a76a",
-  "categories": ["entertainment", "lifestyle", "events"],
-  "lang": "id",
-  "dir": "ltr",
   "icons": [
     {
-      "src": "icons/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-192x192.png",
+      "src": "./icons/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-512x512.png",
+      "src": "./icons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
-  ],
-  "screenshots": [
-    {
-      "src": "cover_baru.jpg",
-      "sizes": "1200x630",
-      "type": "image/jpeg",
-      "form_factor": "wide",
-      "label": "Preview Undangan"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Kirim Ucapan",
-      "short_name": "Ucapan",
-      "description": "Kirim ucapan untuk mempelai",
-      "url": "/undangan-pernikahan/#ucapan",
-      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
-    },
-    {
-      "name": "Lihat Lokasi",
-      "short_name": "Lokasi",
-      "description": "Lihat lokasi resepsi pernikahan",
-      "url": "/undangan-pernikahan/#lokasi",
-      "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
-    }
-  ],
-  "prefer_related_applications": false,
-  "related_applications": []
+  ]
 }
-
