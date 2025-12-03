@@ -1,48 +1,56 @@
-const CACHE_NAME = 'undangan-v4';
+const CACHE_NAME = "undangan-v1";
 
 const PRECACHE_ASSETS = [
-  './',
-  './index.html',
-  './manifest.json',
-  './cover_baru.jpg',
-  './musik.mp3',
-  './offline.html'
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./cover_baru.jpg",
+  "./musik.MP3",
+  "./icons/icon-192x192.png",
+  "./icons/icon-512x512.png"
 ];
 
-self.addEventListener('install', event => {
+// Install Service Worker
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(PRECACHE_ASSETS))
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(PRECACHE_ASSETS);
+    })
   );
-  self.skipWaiting();
 });
 
-self.addEventListener('activate', event => {
+// Activate
+self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then(keys => {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        keys.map(key => {
-          if (key !== CACHE_NAME) return caches.delete(key);
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
         })
       );
     })
   );
-  self.clients.claim();
 });
 
-self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
+// Fetch
+self.addEventListener("fetch", (event) => {
+  if (event.request.method !== "GET") return;
 
   event.respondWith(
-    caches.match(event.request).then(cached => {
+    caches.match(event.request).then((cached) => {
       return (
         cached ||
         fetch(event.request)
-          .then(resp => {
-            const respClone = resp.clone();
-            caches.open(CACHE_NAME).then(cache => cache.put(event.request, respClone));
-            return resp;
+          .then((res) => {
+            const resClone = res.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, resClone);
+            });
+            return res;
           })
-          .catch(() => caches.match('./offline.html'))
+          .catch(() => caches.match("./index.html"))
       );
     })
   );
