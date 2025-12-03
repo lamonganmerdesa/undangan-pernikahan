@@ -2,7 +2,8 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#000000">
   
   <!-- PWA META TAGS LENGKAP -->
   <meta name="application-name" content="Undangan Pernikahan">
@@ -1045,6 +1046,13 @@ if ("serviceWorker" in navigator) {
     .then((reg) => console.log("SW registered:", reg.scope))
     .catch((err) => console.error("SW registration failed:", err));
 }
+</script>
+  <script>
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        window.scrollTo(0, 1);
+    }, 0);
+});
 </script>
 </body>
 </html>
