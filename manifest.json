@@ -2,8 +2,8 @@
   "name": "Undangan Pernikahan Digital",
   "short_name": "Undangan",
   "description": "Undangan Pernikahan Supriyo Widodo & Ika Puji Kurnia",
-  "start_url": "/undangan-pernikahan/",
-  "scope": "/undangan-pernikahan/",
+  "start_url": "./",
+"scope": "./"
   "display": "standalone",
   "display_override": ["fullscreen", "standalone", "minimal-ui"],
   "orientation": "portrait-primary",
@@ -90,3 +90,4 @@
   "prefer_related_applications": false,
   "related_applications": []
 }
+
