@@ -5,9 +5,14 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "display_override": ["fullscreen", "standalone", "minimal-ui"],
   "orientation": "portrait-primary",
   "background_color": "#000428",
   "theme_color": "#d4a76a",
+  "categories": ["entertainment", "lifestyle", "events"],
+  "lang": "id",
+  "dir": "ltr",
+
   "icons": [
     {
       "src": "./icons/icon-192x192.png",
@@ -19,5 +24,34 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+
+  "screenshots": [
+    {
+      "src": "./cover_baru.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Preview Undangan"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Kirim Ucapan",
+      "short_name": "Ucapan",
+      "description": "Kirim ucapan untuk mempelai",
+      "url": "./#ucapan",
+      "icons": [{ "src": "./icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Lihat Lokasi",
+      "short_name": "Lokasi",
+      "description": "Lihat lokasi resepsi pernikahan",
+      "url": "./#lokasi",
+      "icons": [{ "src": "./icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+
+  "prefer_related_applications": false
 }
